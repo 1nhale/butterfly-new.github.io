@@ -6,35 +6,29 @@ let close_btn = document.querySelector(".close-btn");
 let close_btnid = document.querySelector("#close-btn");
 // let translateHeroIcon = document.querySelector("#heroLogoContainer");
 let resnav = document.querySelector(".nav-item-wrapper");
-console.log(resnav,"-----");
+let body = document.querySelector(".box");
+console.log(resnav, "-----");
 
 menus_btn.addEventListener("click", function () {
-    console.log("menu opened");
+  console.log("menu opened");
   menus.classList.add("active2");
-  resnav.style.display= "flex"
-  close_btnid.style.display="block";
-  menus_btn.style.display= "none"
+  resnav.style.display = "flex";
+  close_btnid.style.display = "block";
+  menus_btn.style.display = "none";
+  body.style.display = "block";
+
   // translateHeroIcon.classList.add("translate");
-
-
 });
 
 close_btn.addEventListener("click", function () {
-    console.log("menu closed");
-    menus.classList.remove("active2");
-  resnav.style.display= "none"
-  close_btnid.style.display="none";
-  menus_btn.style.display= "block";
+  console.log("menu closed");
+  menus.classList.remove("active2");
+  resnav.style.display = "none";
+  close_btnid.style.display = "none";
+  menus_btn.style.display = "block";
+  body.style.display = "none";
   // translateHeroIcon.classList.remove("translate");
-
 });
-
-  
-
-
-
-
-
 
 // collaspe
 
@@ -45,18 +39,6 @@ close_btn.addEventListener("click", function () {
 // function myfunction2(){
 //   $('.collapse').collapse('hide');
 // }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // console.warn("Hello Coder>>> "  )
 // let scrollDiv = document.querySelector('#scroll')
@@ -70,69 +52,97 @@ close_btn.addEventListener("click", function () {
 //     }
 // })
 
-
 /* ------ our service animations start ---- */
 
-
-var tl = gsap.timeline({scrollTrigger:{
-    trigger:"#main",
+var tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#main",
     // markers:true,
-    start:"38% 50%",
-    end:"100% 50%",
-    scrub:2,
-    pin:true
-}});
-tl
-.to(".text",{
+    start: "38% 50%",
+    end: "100% 50%",
+    scrub: 2,
+    pin: true,
+  },
+});
+tl.to(
+  ".text",
+  {
     top: "-7%",
-},'a')
-.to("#card-one",{
-    top: "65%",
-},'a')
-.to("#card-two",{
-    top: "130%"
-},'a')
-.to("#card-two",{
-    top: "62%"
-},'b')
-.to("#card-one",{
-    width: "65%",
-    height: "65vh"
-},'b')
-.to("#card-three",{
-    top: "130%"
-}, 'b')
-.to("#card-three",{
-    top: "50%"
-}, 'c')
-.to("#card-two",{
-    width: "70%",
-    height: "70vh"
-},'c')
+  },
+  "a"
+)
+  .to(
+    "#card-one",
+    {
+      top: "65%",
+    },
+    "a"
+  )
+  .to(
+    "#card-two",
+    {
+      top: "130%",
+    },
+    "a"
+  )
+  .to(
+    "#card-two",
+    {
+      top: "62%",
+    },
+    "b"
+  )
+  .to(
+    "#card-one",
+    {
+      width: "65%",
+      height: "65vh",
+    },
+    "b"
+  )
+  .to(
+    "#card-three",
+    {
+      top: "130%",
+    },
+    "b"
+  )
+  .to(
+    "#card-three",
+    {
+      top: "50%",
+    },
+    "c"
+  )
+  .to(
+    "#card-two",
+    {
+      width: "70%",
+      height: "70vh",
+    },
+    "c"
+  );
 
 /* ------our service animations end ---- */
 
-
-
-
-
-
 // testimonials horizontal drag scroll
-var testimonialsCard = document.querySelector('.testimonials_card-scroll-wrapper');
+var testimonialsCard = document.querySelector(
+  ".testimonials_card-scroll-wrapper"
+);
 var isDragging = false;
 var startX, scrollLeft;
 
-testimonialsCard.addEventListener('mousedown', function(e) {
+testimonialsCard.addEventListener("mousedown", function (e) {
   isDragging = true;
   startX = e.pageX - testimonialsCard.offsetLeft;
   scrollLeft = testimonialsCard.scrollLeft;
 });
 
-testimonialsCard.addEventListener('mouseup', function(e) {
+testimonialsCard.addEventListener("mouseup", function (e) {
   isDragging = false;
 });
 
-testimonialsCard.addEventListener('mousemove', function(e) {
+testimonialsCard.addEventListener("mousemove", function (e) {
   if (!isDragging) return;
   e.preventDefault();
   var x = e.pageX - testimonialsCard.offsetLeft;
@@ -140,21 +150,22 @@ testimonialsCard.addEventListener('mousemove', function(e) {
   testimonialsCard.scrollLeft = scrollLeft - walk;
 });
 
-testimonialsCard.addEventListener('wheel', function(e) {
+testimonialsCard.addEventListener("wheel", function (e) {
   e.preventDefault();
   var delta = e.wheelDelta;
   testimonialsCard.scrollLeft += (delta > 0 ? -1 : 1) * 30;
 });
 
-testimonialsCard.addEventListener('scroll', function() {
-  var scrollRight = testimonialsCard.scrollWidth - testimonialsCard.clientWidth - testimonialsCard.scrollLeft;
+testimonialsCard.addEventListener("scroll", function () {
+  var scrollRight =
+    testimonialsCard.scrollWidth -
+    testimonialsCard.clientWidth -
+    testimonialsCard.scrollLeft;
   if (scrollRight <= 0) {
-    document.body.style.overflowX = 'auto';
-    console.log("1nhale")
+    document.body.style.overflowX = "auto";
+    console.log("1nhale");
   } else {
-    document.body.style.overflowX = 'hidden';
-    console.log("case")
+    document.body.style.overflowX = "hidden";
+    console.log("case");
   }
 });
-
-
