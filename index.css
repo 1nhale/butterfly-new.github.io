@@ -388,10 +388,8 @@ header .btn {
   padding: 0.5rem 1.25rem 0.5rem 3.75rem;
   margin-top: clamp(35px, 1vh, 3.125rem);
   /* position: relative !important; */
-  right: 3%;
+  right: -1%;
 }
-
-
 
 .accreditation-container {
   background-image: url(./assets/accreditation.png);
@@ -406,29 +404,27 @@ header .btn {
   justify-content: end;
 }
 
-  .translate{
- 
-  opacity: 0;
-  display: none !important;
-}
- 
+
+
 @media screen and (max-width: 768px) {
   .hero_stats-wrapper {
     padding: 0 9px;
   }
+
   .rectangle-container {
     /* position: absolute !important; */
-    /* right: -4.5%; */
+    right: -1.23%;
     /* left: 80%; */
   }
-  
+
 }
+
 @media screen and (max-width: 1124px) {
   .rectangle-container {
     /* position: relative !important;
     right: 2.5%; */
   }
-  
+
 }
 
 
@@ -669,7 +665,12 @@ header .btn {
   }
 
   .sticky_section {
-    position: relative;
+    /* position: relative; */
+    top: 5%;
+  }
+  .feature_section-cards{
+    position: sticky;
+    top: 26%;
   }
 
   .feature_section-cards-wrapper {
@@ -690,6 +691,8 @@ header .btn {
 
     /* width: 343px; */
     height: 52px;
+    position: sticky;
+    top: 30% !important;
   }
 
   .feature {
@@ -706,7 +709,7 @@ header .btn {
   isolation: isolate;
   max-width: 100%;
   min-height: 655px;
-  margin: 80px !important;
+  margin: 0 0 0 80px !important;
 }
 
 .testimonials_title-card {
@@ -764,7 +767,7 @@ header .btn {
 .testimonials_card-scroll-wrapper {
   padding: 0px 0px 0px 48px;
   gap: 24px;
-  /* width: 100%; */
+  /* width: %; */
   min-height: 655px;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -1027,7 +1030,7 @@ height: 24px; */
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1324px) {
   .testimonials_card-scroll-wrapper {
     width: 100%;
   }
@@ -1418,7 +1421,7 @@ height: 24px; */
   padding: 0px;
   gap: 44px;
   width: 411px;
-  margin: auto;
+  /* margin: auto; */
   height: fit-content;
 }
 
@@ -1494,6 +1497,8 @@ height: 24px; */
     gap: 24px;
     max-width: 100%;
     height: 328px;
+    /* position: sticky;
+    top: 26%; */
     /* margin: auto; */
   }
 
@@ -1501,8 +1506,21 @@ height: 24px; */
     max-width: 100%;
     height: 228.67px;
     border-radius: 40px;
+    /* position: sticky;
+    top: 26%; */
   }
-
+  /* .hiw_title-wrapper {
+    position: sticky;
+    top: 2% !important;
+  }
+  .this_is_how_sm{
+    position: sticky !important;
+    top: 10% !important;
+  }
+  .hiw_book_Consultation_card{
+    position: sticky !important;
+    top: 47% !important;
+  } */
 
 }
 
@@ -1533,7 +1551,7 @@ height: 24px; */
 /* form */
 .contact-layout-wrapper {
   max-width: 100%;
-
+  min-height: 588px;
   justify-content: space-between;
   padding: 56px 64px;
   justify-content: space-between;
@@ -1572,7 +1590,17 @@ form input {
   height: 56px !important;
 }
 
-.contact_title div img {
+form label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-feature-settings: 'cv05' on;
+  color: #121212;
+}
+
+.contact_logo img {
   display: none;
 }
 
@@ -1594,12 +1622,19 @@ form input {
     width: 100%;
   }
 
-  .contact_title div img {
+  .contact_title_logo img {
+    display: none;
+
+  }
+
+  .contact_logo img {
     position: absolute;
     width: 135px;
     height: 115px;
     right: 15%;
     display: block;
+    margin-bottom: -35rem !important;
+
   }
 
   .contact_title h2 {
@@ -1616,16 +1651,20 @@ form input {
 }
 
 @media (max-width: 1200px) {
-  .contact_title-wrapper img {
+  /* .contact_title-wrapper img {
     display: none;
-  }
+  } */
 
-  .contact_title div img {
+  /* .contact_logo  img {
     position: absolute;
     width: 135px;
     height: 115px;
     right: 15%;
     display: block !important;
+     
+  } */
+  .contact_title {
+    /* margin-bottom: -35rem !important; */
   }
 }
 
@@ -1660,9 +1699,10 @@ form input {
   color: #333333;
 }
 
-.contact_title img {
+.contact_title_logo img {
   width: 18.9375rem;
   height: 16.125rem;
+  margin-bottom: -21rem !important;
 }
 
 form_ input {
@@ -1676,6 +1716,7 @@ form_ input {
 .contact_btn {
   display: flex;
   flex-direction: row;
+  margin-top: 32px;
   font-size: 1rem;
   justify-content: center;
   align-items: center;
@@ -1717,9 +1758,9 @@ form_ input {
 #cllp>h3:after {
   content: "\f067";
   font-family: "Font Awesome 5 Free";
-  /* position: absolute; */
-  /* right: 2%; */
-  justify-content: space-between;
+  position: absolute;
+  right: 5%;
+  justify-content: space-between !important;
   font-weight: 600;
 }
 
