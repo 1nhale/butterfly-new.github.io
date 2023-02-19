@@ -6,7 +6,9 @@ let close_btn = document.querySelector(".close-btn");
 let close_btnid = document.querySelector("#close-btn");
 // let translateHeroIcon = document.querySelector("#heroLogoContainer");
 let resnav = document.querySelector(".nav-item-wrapper");
+let header = document.querySelector("#header");
 let body = document.querySelector(".box");
+let nav = document.querySelector(".nav-bar");
 console.log(resnav, "-----");
 
 menus_btn.addEventListener("click", function () {
@@ -16,6 +18,8 @@ menus_btn.addEventListener("click", function () {
   close_btnid.style.display = "block";
   menus_btn.style.display = "none";
   body.style.display = "block";
+  header.style.visibility = "hidden";
+  nav.style.visibility = "visible";
 
   // translateHeroIcon.classList.add("translate");
 });
@@ -27,6 +31,8 @@ close_btn.addEventListener("click", function () {
   close_btnid.style.display = "none";
   menus_btn.style.display = "block";
   body.style.display = "none";
+  header.style.visibility = "visible";
+  nav.style.visibility = "hidden";
   // translateHeroIcon.classList.remove("translate");
 });
 
